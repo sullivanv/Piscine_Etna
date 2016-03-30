@@ -1,0 +1,31 @@
+/*
+** my_strdup.c for Jour07 in /home/vitiel_s/PiscineC/Jour07/my_strdup
+** 
+** Made by VITIELLO Sullivan
+** Login   <vitiel_s@etna-alternance.net>
+** 
+** Started on  Mon Oct  5 10:40:21 2015 VITIELLO Sullivan
+** Last update Tue Oct  6 14:55:29 2015 VITIELLO Sullivan
+*/
+
+#include <stdlib.h>
+
+int	my_strlen(char *str);
+
+char	*my_strdup(char *str)
+{
+  int	i;
+  char	*ptr;
+
+  ptr = malloc((my_strlen(str) * sizeof(*ptr)) + 1);
+  if (str == 0)
+    return (0);
+  i = 0;
+  while (str[i])
+    {
+      ptr[i] = str[i];
+      i++;
+    }
+  ptr[i] = '\0';
+  return (ptr);
+}
